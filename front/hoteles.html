@@ -1,0 +1,116 @@
+<style type="text/css">
+  .Content{
+   margin-top:10%; 
+    height:100%;  
+  }
+
+.card{  background-color: #ffffffba;   }
+
+
+</style>
+
+
+<div class="Content">
+<div class="row">
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+    Registrar Hotel
+  </button>
+</div>
+<h2>Hoteles Resgistrados</h2>
+  <div class="card">
+    
+    <div class="card-body">
+      <table  class="table">
+       <thead>
+       <tr> 
+         <th>Nit</th>
+        <th>Nombre</th>
+        <th>Cantidad habitaciones</th>
+        <th>Ciudad</th>
+       <th>Direccion</th> 
+        
+     </tr>
+   </thead>
+<tbody>
+ <tr ng-repeat="H in hoteles">
+  <td>{{H.nit}}</td>
+  <td>{{H.nombre}}</td>
+  <td>{{H.cantidadhabitaciones}}</td>
+  <td>{{H.ciudad}}</td>
+  <td>{{H.direccion}}</td>
+
+   </tr> 
+
+</tbody>
+
+ </table>
+</div> 
+    
+  </div>
+</div>
+
+ </div>
+
+
+ <!-- The Modal -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Registro hoteles</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+       <div class="container">
+  
+  <form id="RegistrarHotel">
+  <div class="form-group" >
+      <label for="pwd">Nit:</label>
+      <input type="text" class="form-control"  placeholder="Enter Nit" name="Nit">
+    </div>
+
+    <div class="form-group">
+      <label for="email">Nombre:</label>
+      <input type="text" class="form-control" id="Nombreh" placeholder="Enter Hotel" name="Nombrehotel">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Cantidad de habitaciones:</label>
+      <input type="text" class="form-control" id="Cantidadhabitaciones" placeholder="Enter Cantidadhabitaciones" name="Cantidadhabitaciones">
+    </div>
+    <div class="form-group" id="ciudadestext">
+      <label for="pwd">Ciudad:</label>
+      <input type="text" class="form-control"  placeholder="Enter  Ciudad" name="CiudadT">
+    </div>
+
+ <div class="form-group" id="ciudades-select">
+      <label for="pwd">Ciudad:</label>
+      <select name="CiudadS"  class="form-control" id="ciudadeselect">
+      <option ng-repeat="c in ciudades " value="{{c.ciudad}}">{{c.ciudad}}</option>
+     </select>
+    </div>
+<div class="form-group">
+      <label for="pwd">Direccion:</label>
+      <input type="text" class="form-control"  placeholder="Enter  Direccion" name="Direccion">
+    </div>
+
+    <button type="button" class="btn btn-primary"ng-click="RegistrarHotel()">RegistrarHotel</button>
+  </form>
+</div>
+   
+       
+
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+         
+        </div>
+        
+      </div>
+    </div>
+  </div>
+ 

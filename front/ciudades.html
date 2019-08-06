@@ -1,0 +1,87 @@
+<style type="text/css">
+  .Content{
+   margin-top:10%; 
+    height:100%;
+    text-align: center;  
+  }
+
+.card{  background-color: #ffffffba;   }
+
+
+</style>
+
+
+<div class="Content" >
+<div class="row">
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+    Registrar Ciudad
+  </button>
+</div>
+<h2>Ciudades Resgistradas</h2>
+  <div class="card">
+    
+    <div class="card-body">
+      <div class="container">
+      <table  class="table" align="center">
+       <thead>
+       <tr> 
+          <th>Ciudad</th>
+         
+     </tr>
+   </thead>
+<tbody>
+ <tr ng-repeat="C in Cciudad">
+  <td>{{C.ciudad}}</td>
+   </tr> 
+
+</tbody>
+
+ </table>
+</div>
+</div> 
+    
+  </div>
+</div>
+
+ </div>
+
+
+ <!-- The Modal -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Registro Ciudades</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+       <div class="container">
+  
+  <form id="Registrarciudad">
+    <div class="form-group" id="ciudadestext">
+      <label for="pwd">Ciudad:</label>
+      <input type="text" class="form-control"  placeholder="Enter  Ciudad" name="CiudadT">
+    </div>
+
+ 
+    <button type="button" class="btn btn-primary"ng-click="Registrarciudad()">Registrarciudad</button>
+  </form>
+</div>
+   
+       
+
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+         
+        </div>
+        
+      </div>
+    </div>
+  </div>
+ 

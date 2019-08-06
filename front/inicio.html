@@ -1,0 +1,64 @@
+<div class="login-wrap" ng-controller="myCtrl">
+	<div class="login-html">
+         <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">login</label>
+		<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">registro</label>
+		<div class="login-form">
+			<div class="sign-in-htm">
+			<form id="loginU">	
+				<div class="form-group group">
+					<label for="user" class="label">Email</label>
+					<input id="EmailU" name="mail" type="text" class="form-control input">
+				</div>
+				<div class="form-group group">
+					<label for="pass" class="label">Password</label>
+					<input id="pass"  name="password"  type="password" class="form-control input" data-type="password">
+				</div>
+				<div class="group">
+					<input id="check" type="checkbox" class="check" checked>
+					<label for="check"><span class="icon"></span> Keep me Signed in</label>
+				</div>
+				<div class="form-group group">
+					<button" type="button" class="input button" ng-click="Logear()">
+					Logear
+				</button">
+				</div>
+			</form>	
+				<div class="foot-lnk">
+					<a href="#forgot">Forgot Password?</a>
+				</div>
+			</div>
+			<div class="sign-up-htm">
+				<form id="registroU">
+				
+				<div class="form-group group">
+					<label for="user" class="label">Nombres</label>
+					<input id="Nombres" type="text" name="nombre"class="form-control input">
+				</div>
+               <div class="form-group group">
+					<label for="user" class="label">Apellidos</label>
+					<input id="Apellidos" type="text" name="Apellidos"class="form-control input">
+				</div>
+				<div class="form-group group">
+					<label for="pass" class="label">Email Address</label>
+					<input id="Email" name="Email" type="text" class="input">
+				</div>
+				<div class="form-group group">
+					<label for="pass" class="label">Identificacion</label>
+					<input id="identificacion" name="identificacion" type="text" class="form-control input">
+				</div>
+				<div class="form-group group">
+					<label for="pass" class="label">Password</label>
+					<input id="password" type="password" name="password" class=" form-control input" data-type="password">
+				</div>
+				
+				<div class="form-group  group">
+					<button type="button"class="button" ng-click="Registrar()">  Registrar</button>  
+				</div>
+				
+	</form>
+
+
+						</div>
+		</div>
+	</div>
+</div>

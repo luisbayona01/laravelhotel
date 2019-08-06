@@ -1,0 +1,120 @@
+<style type="text/css">
+  .Content{
+   margin-top:10%; 
+    height:100%;
+    text-align: center;  
+  }
+
+.card{  background-color: #ffffffba;   }
+
+
+</style>
+
+
+<div class="Content" >
+<div class="row">
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+    Registrar habitaciones
+  </button>
+</div>
+<h2>habitaciones Resgistradas</h2>
+  <div class="card">
+    
+    <div class="card-body">
+      <div class="container">
+      <table  class="table" align="center">
+       <thead>
+       <tr>  
+        <th>cantidadHabitaciones</th>
+          <th>hotel</th>
+         <th>Tipodehabitacion</th>
+         <th>Acomodacion</th>
+     </tr>
+   </thead>
+<tbody>
+ <tr ng-repeat="ha  in habitaciones">
+  <td>{{ha.cantidadhabitaciones}}</td>
+  <td>{{ha.nombre}}</td>
+  <td>{{ha.tipohabitacion}}</td>
+  <td>{{ha.acomodacion}}</td>
+   </tr> 
+
+</tbody>
+
+ </table>
+</div>
+</div> 
+    
+  </div>
+</div>
+
+ </div>
+
+
+ <!-- The Modal -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Registro de habitaciones</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+       <div class="container">
+  
+  <form id="Registrarhabitacion">
+    
+    <div class="form-group">
+      <label for="pwd">hotel:</label>
+      <select name="hotel" class="form-control" ng-model="idhotel" ng-change="Hotelnumerohabitaciones(idhotel)">
+      <option value="">seleccione un hotel</option>  
+      <option ng-repeat="H in hoteles" value="{{H.idhotel}}">{{H.nombre}}</option>  
+      </select>
+   </div>
+   <div class="form-group" id="ciudadestext">
+      <label for="pwd">habitacionnumero:</label>
+        <select name="numerohabitacion" class="form-control">
+          <option value=""> seleccione una habitacion</option>
+           <option ng-repeat="n in numerohabitaciones"  value="{{n.numero}}">{{n.numero}}</option>
+        </select>  
+    </div>
+
+   <div class="form-group" >
+      <label for="pwd">Tipohabitacion:</label>
+      <select name="Tipohabitacion" class="form-control" ng-model="tipoha" ng-change="Tipoacomodacion(tipoha)">
+      <option value="">seleccione un  tipo de habitacion</option>
+      <option ng-repeat="ht  in habitaciontipo" value="{{ht.idhabitaciontipo}}">{{ht.tipo}}</option>  
+      </select>
+  </div>
+
+
+ <div class="form-group" >
+      <label for="pwd">TipoAcomodacion:</label>
+      <select name="TipoAcomodacion" class="form-control">
+      <option value="">seleccione un tipo  acomodacion</option>
+      <option ng-repeat="Ac in getacomodacion"value="{{Ac.idacomodacion}}">{{Ac.acomodacion}}</option>  
+      </select>
+  </div>
+
+
+    <button type="button" class="btn btn-primary"ng-click="Registrarhabitacion()">Registrar habitacion</button>
+  </form>
+</div>
+   
+       
+
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+         
+        </div>
+        
+      </div>
+    </div>
+  </div>
+ 
